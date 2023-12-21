@@ -28,7 +28,6 @@ const PostsList = () => {
 
   return (
     <section>
-      <h2>Posts</h2>
       {postStatus === "loading" && <p>Loading...</p>}
       {postStatus === "failed" && <p>{error}</p>}
       {postStatus === "succeeded" &&
