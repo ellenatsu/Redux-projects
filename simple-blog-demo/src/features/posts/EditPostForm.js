@@ -55,7 +55,7 @@ const EditPostForm = () => {
   const onDeletePostClicked = () => {
     try {
       setRequestStatus("pending");
-      //dispatch(deletePost({ id: post.id })).unwrap();
+      dispatch(deletePost({ id: post.id })).unwrap();
 
       setTitle("");
       setContent("");

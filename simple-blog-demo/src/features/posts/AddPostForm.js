@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-
-import { postAdded } from "./postsSlice";
+import { addNewPost } from "./postsSlice";
 import { selectAllUsers } from "../users/usersSlice";
 
 const AddPostForm = () => {
@@ -25,7 +24,7 @@ const AddPostForm = () => {
     if (canSave) {
       try {
         setAddRequestStatus("pending");
-        dispatch(postAdded({ title, body: content, userId })).unwrap();
+        dispatch(addNewPost({ title, body: content, userId })).unwrap();
         setTitle("");
         setContent("");
         setUserId("");

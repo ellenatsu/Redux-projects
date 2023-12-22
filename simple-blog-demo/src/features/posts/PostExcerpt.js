@@ -4,8 +4,11 @@ import { Link } from "react-router-dom";
 import PostAuthor from "./PostAuthor";
 import TimeAgo from "./TimeAgo";
 import ReactionButtons from "./ReactionButtons";
+import { selectPostById } from "./postsSlice";
 
-const PostExcerpt = ({ post }) => {
+const PostExcerpt = ({ postId }) => {
+  const post = useSelector((state) => selectPostById(state, postId)); //can't directly use selectPostById cuz it requires 2 params instead of just state
+
   return (
     <article>
       <h2>{post.title}</h2>
