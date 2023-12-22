@@ -13,7 +13,9 @@ const PostsList = () => {
       {postStatus === "loading" && <p>Loading...</p>}
       {postStatus === "failed" && <p>{error}</p>}
       {postStatus === "succeeded" &&
-        orderedPostIds.map((post) => <PostExcerpt key={post.id} post={post} />)}
+        orderedPostIds.map((postId) => (
+          <PostExcerpt key={postId} postId={postId} />
+        ))}
     </section>
   );
 };
